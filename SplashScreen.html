@@ -13,16 +13,41 @@
     <style>
     body{
         background-color: black;
-        background-image: url("ludo.png");
+        /*background-image: url("ludo.png");
         background-size: Auto 500px;
+        background-repeat:no-repeat;
+        background-size:cover;
+        background-attachment: fixed; */
+        
+    }
+
+    img{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        z-index: 1;
     }
     p{
         color: white;
+        z-index: 100;
+    }
+    #one{
+        position: fixed;
+        top: 475px;
+        left: 665px;
+    }
+    #two{
+        position: fixed;
+        top: 375px;
+        left: 925px;
     }
     h1{
         color: white;
+        
+        position: absolute;
     }
-    .column{
+    /*.column{
         float:left;
         width: 50%;
         padding:10px;
@@ -31,7 +56,7 @@
         content:"";
         display: table;
         clear:both;
-    }
+    }*/
     .mybody{
         position: absolute;
         height: 500px;
@@ -44,20 +69,24 @@
 
     <body class="mybody">
         <main>
-        <div class="row">
-            <div class="column">
-                <p
-                    style="background-color: red; border: 3px; border-style:solid; border-color:red ; padding: 1em; width: 70px">        
-                    Play!
-                </p>
-            </div>
-            <div class="column">
-                <p style="background-color: blue; border: 3px; border-style:solid; border-color: blue; padding: 1em; width: 70px">
-                    Help!
-                </p>
-            </div>
+            <img class="img" src="ludo.png" alt="Background for the game">
 
-        </div>
+            </img>
+            <div class="row">
+                <div class="column">
+                    <p class="p" id="one"
+                        style="border: 3px; border-style:solid; border-color:white; padding: 1em; width: 70px">        
+                        Play!
+                    </p>
+                </div>
+                
+                <div class="column">
+                    <p class="p" id="two" 
+                    style="border: 3px; border-style:solid; border-color: white; padding: 1em; width: 70px">
+                        Help!
+                    </p>
+                </div>
+            </div>
         </main>
     </body>
 
