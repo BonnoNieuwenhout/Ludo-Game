@@ -1,0 +1,119 @@
+<!doctype html>
+
+<html>
+    <head>
+        <title>
+            Ludo Game
+        </title>
+        <h1 class="h1">
+            Ludo Game!
+        </h1>
+    </head>
+
+    <style>
+    body{
+        background-color: black;
+        /*background-image: url("ludo.png");
+        background-size: Auto 500px;
+        background-repeat:no-repeat;
+        background-size:cover;
+        background-attachment: fixed; */
+        
+    }
+
+    img{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        z-index: 1;
+    }
+    p{
+        color: white;
+        z-index: 100;
+    }
+    #one{
+        position: absolute;
+        top: 475px;
+        left: 665px;
+    }
+    #two{
+        position: absolute;
+        top: 375px;
+        left: 900px;
+    }
+    h1{
+        color: white;
+        position: absolute;
+        left: 500px;
+    }
+    .bottom{
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+    /*.column{
+        float:left;
+        width: 50%;
+        padding:10px;
+    }
+    .row::after{
+        content:"";
+        display: table;
+        clear:both;
+    }*/
+    .mybody{
+        position: absolute;
+        height: 500px;
+    }
+    *{
+        margin:0;
+        box-sizing: border-box;
+    }
+    </style>
+
+    <body class="mybody">
+        <main>
+            <img class="img" src="ludo.png" alt="Background for the game">
+
+            </img>
+            <div class="
+            row">
+                <div class="column">
+                    <p class="p" id="one"
+                        style="border: 3px; border-style:solid; border-color:white; padding: 1em; width: 70px">        
+                        Play!
+                    </p>
+                </div>
+                
+                <div class="column">
+                    <p class="p" id="two" 
+                    style="border: 3px; border-style:solid; border-color: white; padding: 1em; width: 125px">
+                        How to play!
+                    </p>
+                </div>
+            </div>
+            <div class="bottom">
+                <p >
+                    Games played:
+                </p>
+                <p>
+                    Players online:
+                </p>
+                <p>
+                    Total wins:
+                </p>
+            </div>
+        </main>
+    </body>
+
+    <footer>
+            <p>
+                 This game is made by Casper Cas.. and Bonno Nieuwenhout.
+            </p>
+ 
+            <p>
+                 All rights reserved.
+            </p>
+         </footer>
+</html>
