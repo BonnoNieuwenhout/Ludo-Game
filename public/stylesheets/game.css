@@ -29,14 +29,16 @@ h1 {
     position: absolute;
     left: 1050px;
     top: 205px;
-    line-height: 250px;
+    height: 250px;
 }
 
 #four {
     position: absolute;
     left: 1050px;
     top: 497px;
+    height: 150px;
 }
+
 .board{
     border: 5px solid lightgreen;
     width: 810px;
