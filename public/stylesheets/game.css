@@ -1,0 +1,233 @@
+h1 {
+    color: black;
+    position: absolute;
+    left: 550px;
+    top: -5px;
+    font-size: 45px;
+}
+
+.p {
+    color: black;
+    border: 3px solid black;
+    width: 150px;
+    padding: 1em
+}
+
+#one {
+    position: absolute;
+    left: 1050px;
+    top: 85px;
+}
+
+#two {
+    position: absolute;
+    left: 1050px;
+    top: 145px;
+}
+
+#three {
+    position: absolute;
+    left: 1050px;
+    top: 205px;
+    line-height: 250px;
+}
+
+#four {
+    position: absolute;
+    left: 1050px;
+    top: 497px;
+    line-height: 150px;
+}
+.board{
+    background-color: lightgoldenrodyellow;
+    position: absolute;
+    left: 180px;
+    top: 100px;
+}
+.players{
+    color: black;
+}
+#player1{
+    position: absolute;
+    left: 297px;
+    top: 103px;
+    font-size: 20px;
+}
+#player2{
+    position: absolute;
+    left: 797px;
+    top: 103px;
+    font-size: 20px;
+}
+#player3{
+    position: absolute;
+    left: 797px;
+    top: 523px;
+    font-size: 20px;
+}
+#player4{
+    position: absolute;
+    left: 297px;
+    top: 523px;
+    font-size: 20px;
+}
+.dot1{
+    height: 25px;
+    width: 25px;
+    background-color: blue;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    left: 295px;
+    top: 160px;
+}
+.dot2{
+    height: 25px;
+    width: 25px;
+    background-color: blue;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    left: 335px;
+    top: 160px;
+}
+.dot3{
+    height: 25px;
+    width: 25px;
+    background-color: blue;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    left: 335px;
+    top: 200px;
+}
+.dot4{
+    height: 25px;
+    width: 25px;
+    background-color: blue;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    left: 295px;
+    top: 200px;
+}
+.dot5{
+    height: 25px;
+    width: 25px;
+    background-color: red;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    left: 795px;
+    top: 160px;
+}
+.dot6{
+    height: 25px;
+    width: 25px;
+    background-color: red;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    left: 835px;
+    top: 160px;
+}
+.dot7{
+    height: 25px;
+    width: 25px;
+    background-color: red;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    left: 795px;
+    top: 200px;
+}
+.dot8{
+    height: 25px;
+    width: 25px;
+    background-color: red;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    left: 835px;
+    top: 200px;
+}
+.dot9{
+    height: 25px;
+    width: 25px;
+    background-color: rgb(8, 216, 8);
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    left: 795px;
+    top: 580px;
+}
+.dot10{
+    height: 25px;
+    width: 25px;
+    background-color: rgb(8, 216, 8);
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    left: 835px;
+    top: 580px;
+}
+.dot11{
+    height: 25px;
+    width: 25px;
+    background-color: rgb(8, 216, 8);
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    left: 795px;
+    top: 620px;
+}
+.dot12{
+    height: 25px;
+    width: 25px;
+    background-color: rgb(8, 216, 8);
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    left: 835px;
+    top: 620px;
+}
+.dot13{
+    height: 25px;
+    width: 25px;
+    background-color: yellow;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    left: 295px;
+    top: 580px;
+}
+.dot14{
+    height: 25px;
+    width: 25px;
+    background-color: yellow;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    left: 335px;
+    top: 580px;
+}
+.dot15{
+    height: 25px;
+    width: 25px;
+    background-color: yellow;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    left: 335px;
+    top: 620px;
+}
+.dot16{
+    height: 25px;
+    width: 25px;
+    background-color: yellow;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    left: 295px;
+    top: 620px;
+}
