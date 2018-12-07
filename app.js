@@ -20,8 +20,9 @@ app.get("/", indexRouter);
 app.get("/", (req, res) => {
     res.render("splash.html", {});
 });
-
-app.get("/play", (req, res) =>{
+//how to get from the play button, 
+//which leads to localhost:3000/play to the game.html?
+app.use("/play", (req, res) =>{
     res.render("game.html", {});
 });
 
@@ -50,7 +51,17 @@ setInterval(function() {
 var connectionID = 0;//each websocket receives a unique ID
 
 wss.on("connection", function connection(ws) {
-
+    //Server communication with the client when a connection is established?
+    setTimeout(function() {
+        console.log("Connection state: "+ ws.readyState);
+        ws.send("Thanks for the message. --Your server.");
+        ws.close();
+        console.log("Connection state: "+ ws.readyState);
+    }, 2000);
+    
+    ws.on("message", function incoming(message) {
+        console.log("[LOG] " + message);
+    });
 });
 
 server.listen(port);

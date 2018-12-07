@@ -53,5 +53,4 @@ function printNumber(){
         image6.setAttribute('src', '/images/dice6');
         return image6;
     }
-
 }
