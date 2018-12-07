@@ -36,9 +36,11 @@ h1 {
     position: absolute;
     left: 1050px;
     top: 497px;
-    line-height: 150px;
 }
 .board{
+    border: 5px solid lightgreen;
+    width: 810px;
+    height: 590px;
     background-color: lightgoldenrodyellow;
     position: absolute;
     left: 180px;
@@ -71,7 +73,10 @@ h1 {
     top: 523px;
     font-size: 20px;
 }
-.dot1{
+.dots{
+    border: 1px solid black;
+}
+#dot1{
     height: 25px;
     width: 25px;
     background-color: blue;
@@ -81,7 +86,7 @@ h1 {
     left: 295px;
     top: 160px;
 }
-.dot2{
+#dot2{
     height: 25px;
     width: 25px;
     background-color: blue;
@@ -91,7 +96,7 @@ h1 {
     left: 335px;
     top: 160px;
 }
-.dot3{
+#dot3{
     height: 25px;
     width: 25px;
     background-color: blue;
@@ -101,7 +106,7 @@ h1 {
     left: 335px;
     top: 200px;
 }
-.dot4{
+#dot4{
     height: 25px;
     width: 25px;
     background-color: blue;
@@ -111,7 +116,7 @@ h1 {
     left: 295px;
     top: 200px;
 }
-.dot5{
+#dot5{
     height: 25px;
     width: 25px;
     background-color: red;
@@ -121,7 +126,7 @@ h1 {
     left: 795px;
     top: 160px;
 }
-.dot6{
+#dot6{
     height: 25px;
     width: 25px;
     background-color: red;
@@ -131,7 +136,7 @@ h1 {
     left: 835px;
     top: 160px;
 }
-.dot7{
+#dot7{
     height: 25px;
     width: 25px;
     background-color: red;
@@ -141,7 +146,7 @@ h1 {
     left: 795px;
     top: 200px;
 }
-.dot8{
+#dot8{
     height: 25px;
     width: 25px;
     background-color: red;
@@ -151,7 +156,7 @@ h1 {
     left: 835px;
     top: 200px;
 }
-.dot9{
+#dot9{
     height: 25px;
     width: 25px;
     background-color: rgb(8, 216, 8);
@@ -161,7 +166,7 @@ h1 {
     left: 795px;
     top: 580px;
 }
-.dot10{
+#dot10{
     height: 25px;
     width: 25px;
     background-color: rgb(8, 216, 8);
@@ -171,7 +176,7 @@ h1 {
     left: 835px;
     top: 580px;
 }
-.dot11{
+#dot11{
     height: 25px;
     width: 25px;
     background-color: rgb(8, 216, 8);
@@ -181,7 +186,7 @@ h1 {
     left: 795px;
     top: 620px;
 }
-.dot12{
+#dot12{
     height: 25px;
     width: 25px;
     background-color: rgb(8, 216, 8);
@@ -191,7 +196,7 @@ h1 {
     left: 835px;
     top: 620px;
 }
-.dot13{
+#dot13{
     height: 25px;
     width: 25px;
     background-color: yellow;
@@ -201,7 +206,7 @@ h1 {
     left: 295px;
     top: 580px;
 }
-.dot14{
+#dot14{
     height: 25px;
     width: 25px;
     background-color: yellow;
@@ -211,7 +216,7 @@ h1 {
     left: 335px;
     top: 580px;
 }
-.dot15{
+#dot15{
     height: 25px;
     width: 25px;
     background-color: yellow;
@@ -221,7 +226,7 @@ h1 {
     left: 335px;
     top: 620px;
 }
-.dot16{
+#dot16{
     height: 25px;
     width: 25px;
     background-color: yellow;
