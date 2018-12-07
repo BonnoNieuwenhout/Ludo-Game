@@ -1,0 +1,92 @@
+body{
+    background-color: black;
+    /*background-image: url("ludo.png");
+    background-size: Auto 500px;
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-attachment: fixed; */
+    
+}
+
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    z-index: 1;
+}
+p{
+    color: white;
+    z-index: 100;
+}
+
+.button{
+    background-color: white;
+    border: none;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button1{
+    background-color: white;
+    color: black;
+    border: 2px solid red;
+}
+.button1:hover{
+    background-color: red;
+    color:white;
+}
+
+.button2{
+    background-color: white;
+    color: black;
+    border: 2px solid blue;
+}
+.button2:hover{
+    background-color: blue;
+    color:white;
+}
+
+#one{
+    position: absolute;
+    top: 475px;
+    left: 665px;
+}
+#two{
+    position: absolute;
+    top: 375px;
+    left: 900px;
+}
+h1{
+    color: white;
+    position: absolute;
+    left: 500px;
+}
+.bottom{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+/*.column{
+    float:left;
+    width: 50%;
+    padding:10px;
+}
+.row::after{
+    content:"";
+    display: table;
+    clear:both;
+}*/
+.mybody{
+    position: absolute;
+    height: 500px;
+}
+*{
+    margin:0;
+    box-sizing: border-box;
+}
