@@ -6,8 +6,11 @@ h1 {
     font-size: 45px;
 }
 
-.side {
+.p {
     color: black;
+    border: 3px solid black;
+    width: 150px;
+    padding: 1em
 }
 
 #one {
@@ -26,12 +29,14 @@ h1 {
     position: absolute;
     left: 1050px;
     top: 205px;
+    line-height: 250px;
 }
 
 #four {
     position: absolute;
     left: 1050px;
     top: 497px;
+    line-height: 150px;
 }
 .board{
     background-color: lightgoldenrodyellow;
