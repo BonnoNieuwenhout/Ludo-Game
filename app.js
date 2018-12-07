@@ -21,6 +21,10 @@ app.get("/", (req, res) => {
     res.render("splash.html", {});
 });
 
+app.get("/play", (req, res) =>{
+    res.render("game.html", {});
+});
+
 var server = http.createServer(app);
 const wss = new websocket.Server({ server });
 
@@ -42,7 +46,7 @@ setInterval(function() {
     }
 }, 50000);
 //Hoeze is dit geen constructor?
-var currentGame = new Game(gameStatus.gamesPlayed++);
+//var currentGame = new Game(gameStatus.gamesPlayed++);
 var connectionID = 0;//each websocket receives a unique ID
 
 wss.on("connection", function connection(ws) {
