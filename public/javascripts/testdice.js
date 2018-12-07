@@ -1,10 +1,9 @@
-function diceroll( number){
-    $.ajax({
-        //url: /play?
-        //type: ?
-        succes: function (res){
+document.getElementById("dice").onclick = function() { diceroll() };
+
+function diceroll(){
+        
             var number = Math.floor(Math.random()*6) + 1;
-            var dicenumber = document.getElementById("four");
+            var dicenumber = document.getElementById("dice");
             
             if(number == 1){
                 dicenumber.innerHTML = "<img src=images/dice1.png>";
@@ -31,5 +30,3 @@ function diceroll( number){
             }
             
         }
-    });
-}
