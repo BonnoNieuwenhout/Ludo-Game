@@ -1,12 +1,335 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <title>
-            Ludo Game
-        </title>
-    </head>
-    <body>
-        <h1>Ludo!</h1>
-    </body>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="">
+    <title>
+        Ludo Game
+    </title>
+    <h1 class="h1">
+        Ludo!
+    </h1>
+</head>
+
+<style>
+    h1 {
+        color: black;
+        position: absolute;
+        left: 550px;
+        top: -5px;
+        font-size: 45px;
+    }
+
+    .side {
+        color: black;
+    }
+
+    #one {
+        position: absolute;
+        left: 1050px;
+        top: 85px;
+    }
+
+    #two {
+        position: absolute;
+        left: 1050px;
+        top: 145px;
+    }
+
+    #three {
+        position: absolute;
+        left: 1050px;
+        top: 205px;
+    }
+
+    #four {
+        position: absolute;
+        left: 1050px;
+        top: 497px;
+    }
+    .board{
+        background-color: lightgoldenrodyellow;
+        position: absolute;
+        left: 180px;
+        top: 100px;
+    }
+    .players{
+        color: black;
+    }
+    #player1{
+        position: absolute;
+        left: 297px;
+        top: 103px;
+        font-size: 20px;
+    }
+    #player2{
+        position: absolute;
+        left: 797px;
+        top: 103px;
+        font-size: 20px;
+    }
+    #player3{
+        position: absolute;
+        left: 797px;
+        top: 523px;
+        font-size: 20px;
+    }
+    #player4{
+        position: absolute;
+        left: 297px;
+        top: 523px;
+        font-size: 20px;
+    }
+    .dot1{
+        height: 25px;
+        width: 25px;
+        background-color: blue;
+        border-radius: 50%;
+        display: inline-block;
+        position: absolute;
+        left: 295px;
+        top: 160px;
+    }
+    .dot2{
+        height: 25px;
+        width: 25px;
+        background-color: blue;
+        border-radius: 50%;
+        display: inline-block;
+        position: absolute;
+        left: 335px;
+        top: 160px;
+    }
+    .dot3{
+        height: 25px;
+        width: 25px;
+        background-color: blue;
+        border-radius: 50%;
+        display: inline-block;
+        position: absolute;
+        left: 335px;
+        top: 200px;
+    }
+    .dot4{
+        height: 25px;
+        width: 25px;
+        background-color: blue;
+        border-radius: 50%;
+        display: inline-block;
+        position: absolute;
+        left: 295px;
+        top: 200px;
+    }
+    .dot5{
+        height: 25px;
+        width: 25px;
+        background-color: red;
+        border-radius: 50%;
+        display: inline-block;
+        position: absolute;
+        left: 795px;
+        top: 160px;
+    }
+    .dot6{
+        height: 25px;
+        width: 25px;
+        background-color: red;
+        border-radius: 50%;
+        display: inline-block;
+        position: absolute;
+        left: 835px;
+        top: 160px;
+    }
+    .dot7{
+        height: 25px;
+        width: 25px;
+        background-color: red;
+        border-radius: 50%;
+        display: inline-block;
+        position: absolute;
+        left: 795px;
+        top: 200px;
+    }
+    .dot8{
+        height: 25px;
+        width: 25px;
+        background-color: red;
+        border-radius: 50%;
+        display: inline-block;
+        position: absolute;
+        left: 835px;
+        top: 200px;
+    }
+    .dot9{
+        height: 25px;
+        width: 25px;
+        background-color: rgb(8, 216, 8);
+        border-radius: 50%;
+        display: inline-block;
+        position: absolute;
+        left: 795px;
+        top: 580px;
+    }
+    .dot10{
+        height: 25px;
+        width: 25px;
+        background-color: rgb(8, 216, 8);
+        border-radius: 50%;
+        display: inline-block;
+        position: absolute;
+        left: 835px;
+        top: 580px;
+    }
+    .dot11{
+        height: 25px;
+        width: 25px;
+        background-color: rgb(8, 216, 8);
+        border-radius: 50%;
+        display: inline-block;
+        position: absolute;
+        left: 795px;
+        top: 620px;
+    }
+    .dot12{
+        height: 25px;
+        width: 25px;
+        background-color: rgb(8, 216, 8);
+        border-radius: 50%;
+        display: inline-block;
+        position: absolute;
+        left: 835px;
+        top: 620px;
+    }
+    .dot13{
+        height: 25px;
+        width: 25px;
+        background-color: yellow;
+        border-radius: 50%;
+        display: inline-block;
+        position: absolute;
+        left: 295px;
+        top: 580px;
+    }
+    .dot14{
+        height: 25px;
+        width: 25px;
+        background-color: yellow;
+        border-radius: 50%;
+        display: inline-block;
+        position: absolute;
+        left: 335px;
+        top: 580px;
+    }
+    .dot15{
+        height: 25px;
+        width: 25px;
+        background-color: yellow;
+        border-radius: 50%;
+        display: inline-block;
+        position: absolute;
+        left: 335px;
+        top: 620px;
+    }
+    .dot16{
+        height: 25px;
+        width: 25px;
+        background-color: yellow;
+        border-radius: 50%;
+        display: inline-block;
+        position: absolute;
+        left: 295px;
+        top: 620px;
+    }
+</style>
+
+<body>
+    <main>
+        <div class="side">
+            <p class="p" id="one" 
+                style="border: 3px; border-style:solid; border-color: black; padding: 1em; width: 150px">
+                Round:
+            </p>
+            <p class="p" id="two" 
+                style="border: 3px; border-style:solid; border-color: black; padding: 1em; width: 150px">
+                Time:
+            </p>
+            <p class="p" id="three" 
+                style="border: 3px; border-style:solid; border-color: black; padding: 1em; width: 150px; height: 250px">
+                Chat:
+            </p>
+            <p class="p" id="four"
+                style="border: 3px; border-style:solid; border-color: black; padding: 1em; width: 150px; height: 150px">
+                Dice
+            </p>
+        </div>
+        <div class="board"
+            style="border: 5px; border-style: solid; border-color: lightgreen; width: 810px; height: 590px">
+        </div>
+        <div class="players">
+            <p id="player1">
+                Player 1
+            </p>
+            <p id="player2">
+                Player 2
+            </p>
+            <p id="player3">
+                Player 3
+            </p>
+            <p id="player4">
+                Player 4
+            </p>
+        </div>
+        <span class="dot1"
+            style="border: 1px; border-style:solid; border-color: black">
+        </span>
+        <span class="dot2"
+            style="border: 1px; border-style:solid; border-color: black">
+        </span>
+        <span class="dot3"
+            style="border: 1px; border-style:solid; border-color: black">
+        </span>
+        <span class="dot4"
+            style="border: 1px; border-style:solid; border-color: black">
+        </span>
+        <span class="dot5"
+            style="border: 1px; border-style:solid; border-color: black">
+        </span>
+        <span class="dot6"
+            style="border: 1px; border-style:solid; border-color: black">
+        </span>
+        <span class="dot7"
+            style="border: 1px; border-style:solid; border-color: black">
+        </span>
+        <span class="dot8"
+            style="border: 1px; border-style:solid; border-color: black">
+        </span>
+        <span class="dot9"
+            style="border: 1px; border-style:solid; border-color: black">
+        </span>
+        <span class="dot10"
+            style="border: 1px; border-style:solid; border-color: black">
+        </span>
+        <span class="dot11"
+            style="border: 1px; border-style:solid; border-color: black">
+        </span>
+        <span class="dot12"
+            style="border: 1px; border-style:solid; border-color: black">
+        </span>
+        <span class="dot13"
+            style="border: 1px; border-style:solid; border-color: black">
+        </span>
+        <span class="dot14"
+            style="border: 1px; border-style:solid; border-color: black">
+        </span>
+        <span class="dot15"
+            style="border: 1px; border-style:solid; border-color: black">
+        </span>
+        <span class="dot16"
+            style="border: 1px; border-style:solid; border-color: black">
+        </span>
+    </main>
+</body>
+
 </html>
+<!-- https://codepen.io/frndly/pen/MQpVQR js code voor dobbelsteen -->
