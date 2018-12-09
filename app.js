@@ -22,7 +22,7 @@ app.get("/", (req, res) => {
 });
 //how to get from the play button, 
 //which leads to localhost:3000/play to the game.html?
-app.use("/play", (req, res) =>{
+app.get("/play", (req, res) =>{
     res.render("game.html", {});
 });
 
