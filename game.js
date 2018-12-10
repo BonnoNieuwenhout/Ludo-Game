@@ -51,22 +51,21 @@ game.prototype.isValidTransition = function (from, to){
     console.assert( to in game.prototype.transitionStates == true, "%s: Expecting %s to be a valid transition state", arguments.callee.name, to);
 
     let i, j;
-
-    if(! (from in game.prototype.transitionStates)){
+    if (! (from in game.prototype.transitionStates)) {
         return false;
     }
-    else{
+    else {
         i = game.prototype.transitionStates[from];
     }
 
-    if(! (to in game.prototype.transitionStates)){
+    if (!(to in game.prototype.transitionStates)) {
         return false;
     }
-    else{
+    else {
         j = game.prototype.transitionStates[to];
     }
 
-    return (game.transitionMatrix[i][j] > 0);
+    return (game.prototype.transitionMatrix[i][j] > 0);
 };
 
 game.prototype.isValidState = function (state){
