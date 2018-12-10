@@ -2,13 +2,15 @@ document.getElementById("Pion").onclick = function() { movePion() };
 
 function movePion(){
     var Pion = document.getElementById("Pion");
-    var Position = document.getElementById("Position");
-    var PositionId = document.getElementById("Position").id;
+    var Position = document.getElementsByClassName("Position");
+    var PositionId = Position.getElementById("")
     var Movement = document.getElementById(PositionId + number);
-    //According to the rolled number the Pion should move to 
-    //(The current Position number + the rolled dice number) id
+    //The Pions can move over open dots that each have an id that is
+    //in increasing order. The Pion should move to the open dot with the rolled
+    //dice number, so to the open dot with the current ID number and the added
+    //dicenumber
     if(number == 1){
-        if(Position.innerHTML = Pion){
+        if(PositionId.innerHTML = Pion){
             Movement.innerHTML = Pion;
         } 
     }
