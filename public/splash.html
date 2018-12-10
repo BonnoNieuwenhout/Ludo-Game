@@ -29,7 +29,7 @@
                 
                 <div class="column">
                     <button class="button button2" id="two">
-                        <div class="popup" onclick="popFunction()">
+                        <div class="popup">
                         How to play
                         <span class="popuptext" id="myPopup">
                             To enter a token into play from its yard to its starting square, 
@@ -66,11 +66,7 @@
                 </p>
             </div>
         </main>
-        <script>
-        function popFunction(){
-            var popup = document.getElementById("myPopup");
-            popup.classList.toggle("show");
-        }
+        <script src="./javascripts/popup.js">
         </script>
         <script src="./javascripts/serverconnection.js">
         </script>
