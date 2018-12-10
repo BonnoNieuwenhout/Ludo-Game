@@ -1,5 +1,8 @@
 document.getElementById("Pion").onclick = function() { movePion() };
 
+const diceroll = require('./dice')
+    let number = diceroll.number;
+    
 function movePion(){
     var Pion = document.getElementById("Pion");
     var Position = document.getElementsByClassName("Position");

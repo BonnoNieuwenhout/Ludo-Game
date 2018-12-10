@@ -30,3 +30,5 @@ function diceroll(){
             }
             
         }
+
+        module.exports = number;
