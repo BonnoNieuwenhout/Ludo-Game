@@ -28,6 +28,6 @@ timer();
 
 start.onclick = alert("doe het!");
 
-document.getElementById("stop").onclick = function(){
+stop.onclick = function(){
     clearTimeout(t);
 }
