@@ -6,6 +6,21 @@ h1 {
     font-size: 45px;
 }
 
+h2{
+    position: absolute;
+    left: 1125px;
+    top: 145px;
+}
+#start{
+    position: absolute;
+    left: 70px;
+    top: 28px;
+}
+#stop{
+    position: absolute;
+    left: 120px;
+    top: 28px;
+}
 .p {
     color: black;
     border: 3px solid black;
@@ -22,7 +37,7 @@ h1 {
 #two {
     position: absolute;
     left: 1050px;
-    top: 145px;
+    top: 160px;
 }
 
 #three {
