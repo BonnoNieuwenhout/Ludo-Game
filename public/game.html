@@ -4,6 +4,7 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="./stylesheets/game.css">
+    <link rel="stylesheet" type="text/css" href="./stylesheets/chat.css">
     <title>
         Ludo Game
     </title>
@@ -13,11 +14,20 @@
     <h2><time>
         00:00:00
     </time></h2>
+    <script type='text/javascript' src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
 </head>
 
 <body>
     <main>
-        <div class="side">
+        <div class="chat">
+                <p class="members-list">-</p>
+                <p class="messages"></p>
+                <form class="message-form" onsubmit="return false;">
+                  <input class="message-form__input" placeholder="Type a message.." type="text"/>
+                  <input class="message-form__button" value="Send" type="submit"/>
+                </form>
+            </div>
+            <div class="side">
             <p class="p" id="one">
                 Round:
             </p>
@@ -26,9 +36,6 @@
                 <button class="stop" id="stop">stop</button>                
                 Time:
             </div>
-            <p class="p" id="three">
-                Chat:
-            </p>
             <div class="p" id="four">
                 <button class="dice" id="dice">
                     <img src="./images/dice1.png">
@@ -75,8 +82,9 @@
         </script>
         <script src="./javascripts/clock.js">
         </script>
+        <script src="./javascripts/testchat.js">
+        </script>
     </main>
 </body>
 
 </html>
-<!-- https://codepen.io/frndly/pen/MQpVQR js code voor dobbelsteen -->
