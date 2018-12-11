@@ -31,4 +31,6 @@ function diceroll(){
             
         }
 
+        define(function (require, exports, module){
         module.exports = number;
+        });
