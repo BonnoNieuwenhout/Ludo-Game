@@ -15,16 +15,7 @@ var app = express();
 app.use(express.static(__dirname + "/public"));
 
 app.get("/", indexRouter);
-
-//TODO: move to routes/index
-app.get("/", (req, res) => {
-    res.render("splash.html", {});
-});
-//how to get from the play button, 
-//which leads to localhost:3000/play to the game.html?
-app.get("/play", (req, res) =>{
-    res.render("game.html", {});
-});
+app.get("/play", indexRouter);
 
 var server = http.createServer(app);
 const wss = new websocket.Server({ server });
@@ -47,20 +38,113 @@ setInterval(function() {
     }
 }, 50000);
 //Hoeze is dit geen constructor?
-//var currentGame = new Game(gameStatus.gamesPlayed++);
+var currentGame = new Game(gameStatus.gamesPlayed++);
 var connectionID = 0;//each websocket receives a unique ID
 
 wss.on("connection", function connection(ws) {
     //Server communication with the client when a connection is established?
-    setTimeout(function() {
-        console.log("Connection state: "+ ws.readyState);
-        ws.send("Thanks for the message. --Your server.");
-        ws.close();
-        console.log("Connection state: "+ ws.readyState);
-    }, 2000);
+    //setTimeout(function() {
+        //console.log("Connection state: "+ ws.readyState);
+        //ws.send("Thanks for the message. --Your server.");
+        //ws.close();
+        //console.log("Connection state: "+ ws.readyState);
+    //}, 2000);
     
-    ws.on("message", function incoming(message) {
-        console.log("[LOG] " + message);
+    //ws.on("message", function incoming(message) {
+        //console.log("[LOG] " + message);
+    //});
+
+    let con = ws;
+    con.id = connectionID++;
+    let playerType = currentGame.addPlayer(con);
+    websockets[con.id] = currentGame;
+
+    console.log("Player %s placed in game %s as %s", con.id, currentGame.id, playerType);
+
+    con.send((playerType == "A") ? messages.S_PLAYER_A : messages.S_PLAYER_B && messages.S_PLAYER_C && messages.S_PLAYER_D);
+
+    if(currentGame.hasFourConnectedPlayers()){
+        currentGame = new Game(gameStatus.gamesPlayed++);
+    }
+
+    con.on("message", function incoming(message){
+
+        let oMsg = JSON.parse(message);
+        let gameObj = websockets[con.id];
+        let isPlayerA = (gameObj.playerA == con) ? true : false;
+
+        //Your turn function?
+        if(isPlayerA){
+            //Not your turn?
+            if(oMsg.type == messages.T_YOUR_TURN){
+                //Player B gets the message it is his turn
+
+                if(gameObj.hasFourConnectedPlayers()){
+                    gameObj.playerB.send(message);
+                }
+            }
+        }
+        else{
+            if(oMsg.type == messages.T_YOUR_TURN){
+                gameObj.playerA.send(message);
+            }
+
+            if(oMsg.type == messages.T_GAME_WON_BY){
+                gameObj.setStatus(oMsg.data);
+                //Update statistics, because a game has been won
+                gameStatus.gamesWon++;
+            }
+        }
+    });
+
+    con.on("close", function (code){
+        console.log(con.id + "disconnected ...");
+
+        if(code == "1001"){
+            let gameObj = websockets[con.id];
+
+            if(gameObj.isValidTransition(gameObj.gameStatus, "ABORTED")){
+                gameObj.setStatus("ABORTED");
+                gameStatus.gamesAborted++;
+
+                //Check what connections are still open
+                //Close those connections since a player left
+
+                //Player A
+                try{
+                    gameObj.playerA.close();
+                    gameObj.playerA = null;
+                }
+                catch(e){
+                    console.log("Player A closing: " + e);
+                }
+                //Player B
+                try{
+                    gameObj.playerB.close();
+                    gameObj.playerB = null;
+                }
+                catch(e){
+                    console.log("Player B closing: " + e);
+                }
+                //Player C
+                try{
+                    gameObj.playerC.close();
+                    gameObj.playerC = null;
+                }
+                catch(e){
+                    console.log("Player C closing: " + e);
+                }
+                //Player D
+                try{
+                    gameObj.playerD.close();
+                    gameObj.playerD = null;
+                }
+                catch(e){
+                    console.log("Player D closing: " + e);
+                }
+
+            }
+        }
     });
 });
 

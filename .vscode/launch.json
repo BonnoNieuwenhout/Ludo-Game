@@ -5,8 +5,8 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}\\app.js",
-            "cwd": "${workspaceFolder}\\app.js",
+            "program": "${workspaceFolder}\\game.js",
+            "cwd": "${workspaceFolder}\\game.js",
             "args": [
                 "3000"
             ]
