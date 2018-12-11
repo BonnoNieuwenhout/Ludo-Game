@@ -28,14 +28,13 @@ game.prototype.transitionStates["C"] = 11; //C won
 game.prototype.transitionStates["D"] = 12; //D won
 game.prototype.transitionStates["ABORTED"] = 13;
 
-//What to do now?
 
 game.prototype.transitionMatrix = [
     [0, 1, 0, 0, 0, 0, 0],   //0 JOINT
     [1, 0, 1, 0, 0, 0, 0],   //1 JOINT
     [1, 1, 1, 0, 0, 0, 0],   //2 JOINT
     [1, 1, 1, 1, 0, 0, 0],   //3 JOINT
-    [0, 0, 0, 1, 0, 0, 1],   //4 JOINT (note: once we have two players, there is no way back!)
+    [0, 0, 0, 1, 0, 0, 1],   //4 JOINT (note: once we have four players, there is no way back!)
     [0, 0, 0, 1, 1, 1, 1],   //Pion Moved
     [0, 0, 0, 0, 0, 0, 0],   //A WON
     [0, 0, 0, 0, 0, 0, 0],   //B WON
@@ -116,12 +115,12 @@ game.prototype.addPlayer = function (player) {
 
         if(this.playerC == null){
             this.playerC = player;
-            return "B";
+            return "C";
         }
 
         if(this.playerD == null){
         this.playerD = player;
-        return "B";
+        return "D";
         }
     }
 };
