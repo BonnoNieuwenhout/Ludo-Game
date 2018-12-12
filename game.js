@@ -113,14 +113,17 @@ game.prototype.addPlayer = function (player) {
         return "B";
         }
 
-        if(this.playerC == null){
+        else{
+            if(this.playerC == null){
             this.playerC = player;
             return "C";
-        }
-
-        if(this.playerD == null){
-        this.playerD = player;
-        return "D";
+            }
+            else{
+                if(this.playerD == null){
+                this.playerD = player;
+                return "D";
+                }
+            }
         }
     }
 };
