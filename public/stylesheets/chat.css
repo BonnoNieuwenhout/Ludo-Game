@@ -6,12 +6,12 @@
     flex-direction: column;
     max-height: 250px;
     position: absolute;
-    left: 1040px;
+    left: 1038px;
     top: 200px;
   }
 .members-list,
 .messages {
-    border: 1px solid black;
+    border: 3px solid black;
     padding: 10px;
     margin-bottom: 15px;
     width: 150px;
@@ -36,7 +36,7 @@
   }
 .message-form__input {
     flex-grow: 1;
-    border: 1px solid black;
+    border: 2px solid black;
     padding: 10px 15px;
     font-size: 16px;
     width: 10px;
