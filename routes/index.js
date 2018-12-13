@@ -14,6 +14,7 @@ router.get("/", function(req, res) {
   }
 
   visits++;
+  res.cookie("Visits", visits);
   res.sendFile("splash.html", {root: "./public"});
 });
 
