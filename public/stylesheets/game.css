@@ -257,3 +257,10 @@ img{
     left: 295px;
     top: 620px;
 }
+
+#gameboard{
+    position: absolute;
+}
+#playGround{
+    display: none;
+}
