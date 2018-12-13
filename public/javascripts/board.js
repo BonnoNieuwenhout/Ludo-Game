@@ -1,4 +1,5 @@
 const tileWidth = 50;
+var maindiv = document.getElementById("main");
 var canvas = document.getElementById("gameboard");
 var context = canvas.getContext("2d");
 
