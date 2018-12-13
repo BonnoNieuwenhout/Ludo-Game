@@ -32,9 +32,9 @@ game.prototype.transitionStates["ABORTED"] = 13;
 game.prototype.transitionMatrix = [
     [0, 1, 0, 0, 0, 0, 0],   //0 JOINT
     [1, 0, 1, 0, 0, 0, 0],   //1 JOINT
-    [1, 1, 1, 0, 0, 0, 0],   //2 JOINT
-    [1, 1, 1, 1, 0, 0, 0],   //3 JOINT
-    [1, 1, 1, 1, 1, 0, 0],   //4 JOINT (note: once we have four players, there is no way back!)
+    [0, 1, 0, 1, 0, 0, 0],   //2 JOINT
+    [0, 0, 1, 0, 1, 0, 0],   //3 JOINT
+    [0, 0, 0, 1, 0, 1, 0],   //4 JOINT (note: once we have four players, there is no way back!)
     [0, 0, 0, 1, 1, 1, 1],   //Pion Moved, not sure if this is correct to be here
     [0, 0, 0, 0, 0, 0, 0],   //A WON
     [0, 0, 0, 0, 0, 0, 0],   //B WON
