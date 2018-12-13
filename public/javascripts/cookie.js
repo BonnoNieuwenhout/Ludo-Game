@@ -18,4 +18,7 @@ function getCookie(cname){
   }
   return "";
 }
-    
+
+var visits = setCookie('visits', 0);
+var oldValue = Cookies.get('visits');
+Cookies.set('my-cookie', ++oldValue);
