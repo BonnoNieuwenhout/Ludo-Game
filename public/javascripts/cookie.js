@@ -1,5 +1,4 @@
 function setCookie(cname, value){
-    var d = 0;
     document.cookie = cname + value;
 }
 
@@ -20,5 +19,8 @@ function getCookie(cname){
 }
 
 var visits = setCookie('visits', 0);
-var oldValue = Cookies.get('visits');
-Cookies.set('my-cookie', ++oldValue);
+var oldValue = cookie.getCookie('visits');
+cookie.setCookie('visits', ++oldValue);
+
+module.exports = oldValue;
+

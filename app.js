@@ -11,9 +11,6 @@ var Game = require("./game");
 var port = process.argv[2];
 var app = express();
 
-var cookie = require("./public/javascripts/cookie");
-
-
 app.use(express.static(__dirname + "/public"));
 
 app.set('view engine', 'ejs')
