@@ -11,6 +11,8 @@ var Game = require("./game");
 var port = process.argv[2];
 var app = express();
 
+var cookie = require("./public/javascripts/cookie");
+
 
 app.use(express.static(__dirname + "/public"));
 
@@ -64,6 +66,9 @@ wss.on("connection", function (ws) {
     let playerType = currentGame.addPlayer(con);
     websockets[con.id] = currentGame;
     gameStatus.playersOnline++;
+    
+    var visits = cookie.getCookie('visits');
+    cookie.setCookie('visits', ++visits);
 
     console.log("Player %s placed in game %s as %s", con.id, currentGame.id, playerType);
 
