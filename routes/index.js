@@ -15,7 +15,7 @@ router.get("/", function(req, res) {
   }
 
   visits++;
-  res.cookie("Visits", visits, {maxAge: new Date(Date.now + 30000000)});
+  res.cookie("Visits", visits, {maxAge: 30000000});
   res.render('splash.ejs', { gamesPlayed: gameStatus.gamesPlayed, gamesWon: gameStatus.gamesWon, playersOnline : gameStatus.playersOnline, visits: visits });
   //redundant
   //res.sendFile("splash.html", {root: "./public"});
