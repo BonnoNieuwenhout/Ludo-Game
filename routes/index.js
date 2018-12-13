@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var cookie = require("cookie-parser");
-var app = express();
+var gameStatus = require("./statTracker");
 
 router.use(cookie());
 
