@@ -1,8 +1,9 @@
 var express = require('express');
 var router = express.Router();
 var cookie = require("cookie-parser");
+var app = express();
 
-app.use(cookie());
+router.use(cookie());
 
 /* GET home page. */
 router.get("/", function(req, res) {
@@ -14,8 +15,10 @@ router.get("/", function(req, res) {
   }
 
   visits++;
-  res.cookie("Visits", visits);
-  res.sendFile("splash.html", {root: "./public"});
+  res.cookie("Visits", visits, {maxAge: new Date(Date.now + 30000000)});
+  res.render('splash.ejs', { gamesPlayed: gameStatus.gamesPlayed, gamesWon: gameStatus.gamesWon, playersOnline : gameStatus.playersOnline, visits: visits });
+  //redundant
+  //res.sendFile("splash.html", {root: "./public"});
 });
 
 /* Pressing the play button will return the game.html page */

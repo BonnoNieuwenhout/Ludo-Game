@@ -13,12 +13,8 @@ var app = express();
 
 app.use(express.static(__dirname + "/public"));
 
-app.set('view engine', 'ejs')
+app.set('view engine', 'ejs');
 app.get("/", indexRouter);
-app.get('/', (req, res) => {
-    //example of data to render; here gameStatus is an object holding this information
-    res.render('splash.ejs', { gamesPlayed: gameStatus.gamesPlayed, gamesWon: gameStatus.gamesWon, playersOnline : gameStatus.playersOnline });
-});
 app.get("/play", indexRouter);
 
 var server = http.createServer(app);
