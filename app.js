@@ -11,10 +11,32 @@ var Game = require("./game");
 var port = process.argv[2];
 var app = express();
 
+//Should move to index.js
+var cookie = require("cookie-parser");
+app.use(cookie());
+//
+
 app.use(express.static(__dirname + "/public"));
 
 app.set('view engine', 'ejs');
-app.get("/", indexRouter);
+//Should move to index.js
+app.get("/", function(req, res) {
+    var visits;
+    visits = JSON.stringify(req.cookies).substring(11, 12);
+  
+    if(JSON.stringify(req.cookies).length == 15){
+      visits = JSON.stringify(req.cookies).substring(11, 13);
+    }
+  
+    visits++;
+    gameStatus.totalVisits = visits;
+    res.cookie("Visits", visits, {maxAge: 31536000});
+    res.render('splash.ejs', { gamesPlayed: gameStatus.gamesPlayed, gamesWon: gameStatus.gamesWon, playersOnline : gameStatus.playersOnline, Visits: gameStatus.totalVisits });
+    //redundant
+    //res.sendFile("splash.html", {root: "./public"});
+  });
+//This is temporarely reduntant as I cant fix it in the index.js
+//app.get("/", indexRouter);
 app.get("/play", indexRouter);
 
 var server = http.createServer(app);
