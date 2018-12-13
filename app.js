@@ -63,7 +63,7 @@ wss.on("connection", function (ws) {
     console.log("Player %s placed in game %s as %s", con.id, currentGame.id, playerType);
 
     con.send((playerType == "A") ? messages.S_PLAYER_A : messages.S_PLAYER_B && messages.S_PLAYER_C && messages.S_PLAYER_D);
-
+    
     if(currentGame.hasFourConnectedPlayers()){
         currentGame = new Game(gameStatus.gamesPlayed++);
     }

@@ -95,9 +95,6 @@ game.prototype.addPlayer = function (player) {
         return new Error("Invalid call to addPlayer, current state is %s", this.gameState);
     }
 
-    /*
-     * revise the game state??
-     */ 
     var error = this.setStatus("3 JOINT");
     if(error instanceof Error){
         this.setStatus("4 JOINT");
@@ -105,22 +102,26 @@ game.prototype.addPlayer = function (player) {
 
     if (this.playerA == null) {
         this.playerA = player;
+        console.log("You are player A");
         return "A";
     }
     else {
         if(this.playerB == null){
         this.playerB = player;
+        console.log("You are player B");
         return "B";
         }
 
         else{
             if(this.playerC == null){
             this.playerC = player;
+            console.log("You are player C");
             return "C";
             }
             else{
                 if(this.playerD == null){
                 this.playerD = player;
+                console.log("You are player D");
                 return "D";
                 }
             }
