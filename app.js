@@ -14,6 +14,11 @@ var app = express();
 
 app.use(express.static(__dirname + "/public"));
 
+app.set('view engine', 'ejs')
+app.get('/', (req, res) => {
+    //example of data to render; here gameStatus is an object holding this information
+    res.render('splash.ejs', { gamesPlayed: gameStatus.gamesPlayed, gamesWon: gameStatus.gamesWon, playersOnline : gameStatus.playersOnline });
+})
 app.get("/", indexRouter);
 app.get("/play", indexRouter);
 
@@ -22,9 +27,8 @@ const wss = new websocket.Server({ server });
 
 var websockets = {};
 
-/*
- * regularly clean up the websockets object
- */ 
+
+//regularly clean up the websockets object 
 setInterval(function() {
     for(let i in websockets){
         if(websockets.hasOwnProperty(i)){
@@ -43,22 +47,23 @@ var connectionID = 0;//each websocket receives a unique ID
 
 wss.on("connection", function (ws) {
     //Server communication with the client when a connection is established?
-    // setTimeout(function() {
-    //     console.log("Connection state: "+ ws.readyState);
-    //     ws.send("Thanks for the message. --Your server.");
-    //     ws.close();
-    //     console.log("Connection state: "+ ws.readyState);
-    // }, 2000);
+    setTimeout(function() {
+         console.log("Connection state: "+ ws.readyState);
+         ws.send("Thanks for the message. --Your server.");
+         ws.close();
+         console.log("Connection state: "+ ws.readyState);
+    }, 2000);
     
     console.log("Player connected to game")
-    // ws.on("message", function incoming() {
-    //     console.log("[LOG] ");
-    // });
+    ws.on("message", function incoming() {
+         console.log("[LOG] ");
+     });
 
     let con = ws;
     con.id = connectionID++;
     let playerType = currentGame.addPlayer(con);
     websockets[con.id] = currentGame;
+    gameStatus.playersOnline++;
 
     console.log("Player %s placed in game %s as %s", con.id, currentGame.id, playerType);
 
@@ -82,6 +87,8 @@ wss.on("connection", function (ws) {
 
                 if(gameObj.hasFourConnectedPlayers()){
                     gameObj.playerB.send(message);
+                    gameObj.playerC.send(message);
+                    gameObj.playerD.send(message);
                 }
             }
         }
@@ -100,6 +107,7 @@ wss.on("connection", function (ws) {
 
     con.on("close", function (code){
         console.log(con.id + "disconnected ...");
+        gameStatus.playersOnline--;
 
         if(code == "1001"){
             let gameObj = websockets[con.id];

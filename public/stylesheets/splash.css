@@ -72,6 +72,10 @@ h1{
     top: 10px;
     left: 10px;
 }
+
+#status{
+    color: white;    
+}
 /*.column{
     float:left;
     width: 50%;

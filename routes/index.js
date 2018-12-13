@@ -11,4 +11,7 @@ router.get("/play", function(req, res){
   res.sendFile("game.html", {root: "./public"});
 });
 
+router.get("/*", function(req, res){
+  res.send("Not a valid route");
+});
 module.exports = router;
