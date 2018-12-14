@@ -1,6 +1,6 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
-const imageData = ctx.createImageData(20, 20);
+const imageData = ctx.createImageData(50, 50);
 
 // Iterate through every pixel
 for (let i = 0; i < imageData.data.length; i += 4) {
@@ -35,7 +35,7 @@ for(var i=0; i<11; i++){
   for(var j=0; j<11; j++){
     switch(boardmap[j][i]){
       case 0: break;
-      case 1: ctx.putImageData(imageData, 10+20*i, 10+20*j);
+      case 1: ctx.putImageData(imageData, 25+50*i, 25+50*j); break;
     }
   }
 }
