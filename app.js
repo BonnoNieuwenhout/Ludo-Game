@@ -63,7 +63,7 @@ var currentGame = new Game(gameStatus.gamesPlayed++);
 var connectionID = 0;//each websocket receives a unique ID
 
 wss.on("connection", function (ws) {
-    //Server communication with the client when a connection is established?
+    //Server communication with the client when a connection is established
     setTimeout(function() {
          console.log("Connection state: "+ ws.readyState);
          ws.send("Thanks for the message. --Your server.");
@@ -90,28 +90,28 @@ wss.on("connection", function (ws) {
         currentGame = new Game(gameStatus.gamesPlayed++);
     }
 
-    con.on("message", function incoming(message){
+    con.on("message", function incoming(messages){
 
-        let oMsg = JSON.parse(message);
+        let oMsg = JSON.parse(messages);
         let gameObj = websockets[con.id];
         let isPlayerA = (gameObj.playerA == con) ? true : false;
 
-        //Your turn function?
+        //What happens when plyer is Player A
         if(isPlayerA){
-            //Not your turn?
+            //If the message is that it is your turn
             if(oMsg.type == messages.T_YOUR_TURN){
-                //Player B gets the message it is his turn
+                //Other players get the message
 
                 if(gameObj.hasFourConnectedPlayers()){
-                    gameObj.playerB.send(message);
-                    gameObj.playerC.send(message);
-                    gameObj.playerD.send(message);
+                    gameObj.playerB.send(messages);
+                    gameObj.playerC.send(messages);
+                    gameObj.playerD.send(messages);
                 }
             }
         }
         else{
             if(oMsg.type == messages.T_YOUR_TURN){
-                gameObj.playerA.send(message);
+                gameObj.playerA.send(messages);
             }
 
             if(oMsg.type == messages.T_GAME_WON_BY){
@@ -123,7 +123,7 @@ wss.on("connection", function (ws) {
     });
 
     con.on("close", function (code){
-        console.log(con.id + "disconnected ...");
+        console.log("Player " + con.id + " disconnected ...");
         gameStatus.playersOnline--;
 
         if(code == "1001"){
