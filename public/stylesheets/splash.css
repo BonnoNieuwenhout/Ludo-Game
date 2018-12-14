@@ -54,15 +54,26 @@ p{
     color:white;
 }
 
-#one{
+#one:not(:fullscreen){
     position: absolute;
     top: 475px;
     left: 665px;
 }
-#two{
+#one:fullscreen{
+    position: absolute;
+    top: 500px;
+    left: 700px;
+}
+
+#two:not(:fullscreen){
     position: absolute;
     top: 375px;
     left: 900px;
+}
+#two:fullscreen{
+    position: absolute;
+    top: 400px;
+    left: 925px;
 }
 h1{
     color: white;
