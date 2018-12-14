@@ -31,6 +31,6 @@ function diceroll(){
             
         }
 
-        define(function (require, exports, module){
-        module.exports = number;
-        });
+        //I dont know if this is a fix for the reference error
+        //Cant seem to fix it
+        (module || {}).exports = number;
