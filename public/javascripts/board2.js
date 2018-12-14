@@ -11,9 +11,6 @@ for (let i = 0; i < imageData.data.length; i += 4) {
   imageData.data[i + 3] = 200;  // A value
 }
 
-// Draw image data to the canvas
-// ctx.putImageData(imageData, 10, 10);
-
 function createMap(){
   var map = new Array();
   map.push([0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0]);
