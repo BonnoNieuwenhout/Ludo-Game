@@ -258,9 +258,9 @@ img{
     top: 620px;
 }
 
-/* #gameboard{
+#canvas{
     position: absolute;
+    left: 400px;
+    top: 200px;
+    z-index: 30;
 }
-#playGround{
-    display: none;
-} */
