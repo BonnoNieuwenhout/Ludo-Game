@@ -260,9 +260,9 @@ img{
 
 #canvas{
     position: absolute;
-    left: 300px;
-    top: 100px;
+    left: 500px;
+    top: 300px;
     z-index: 10;
-    width: 1500px;
-    height: 750px; 
+    /* width: 1500px;
+    height: 750px;  */
 }
